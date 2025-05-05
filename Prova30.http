@@ -5,8 +5,8 @@ POST {{Prova30}}/api/usuario/cadastrar
 Content-Type: application/json
 
 {
-  "email": "getuliobrocha",
-  "senha": "broxinha"
+  "email": "lukinhas",
+  "senha": "12345"
 }
 
 ### Listar Usuario
@@ -17,8 +17,8 @@ POST {{Prova30}}/api/usuario/login
 Content-Type: application/json
 
 {
-  "email": "getuliobrocha",
-  "senha": "broxinha"
+  "email": "lukinhas",
+  "senha": "12345"
 }
 
 ### Cadastrar Evento
@@ -26,14 +26,14 @@ POST {{Prova30}}/api/eventos/cadastrar
 Content-Type: application/json
     
 {
-    "nome": "Festinha da Tia do Gege",
+    "nome": "Balacobaco",
     "data": "2025-06-03T12:00:00",
-    "local": "Casa da Tia",
-    "usuarioId": 1
+    "local": "Casa Amarela",
+    "usuarioId": 2
 }
 
 ### Listar Evento
 GET {{Prova30}}/api/eventos/listar
 
 ### Eventos por Usuario
-GET {{Prova30}}/api/eventos/usuario/1
+GET {{Prova30}}/api/eventos/eventoUsuario/2

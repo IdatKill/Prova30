@@ -10,39 +10,40 @@ namespace Prova30.Controllers;
 [Route("api/usuario")]
 public class UsuarioController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly IUsuarioRepository _repository;
 
-    public UsuarioController(AppDbContext context)
+    public UsuarioController(IUsuarioRepository repository)
     {
-        _context = context;
+        _repository = repository;
     }
 
     [HttpGet("listar")]
     public IActionResult Listar()
     {
-        var usuarios = _context.Usuarios.ToList();
+        var usuarios = _repository.ListarTodos();
         return Ok(usuarios);
     }
 
     [HttpPost("cadastrar")]
     public IActionResult Cadastrar([FromBody] Usuario usuario)
     {
-        _context.Usuarios.Add(usuario);
-        _context.SaveChanges();
+        _repository.Cadastrar(usuario);
+        _repository.Salvar();
         return Created("", usuario);
     }
 
     [HttpPost("login")]
     public IActionResult Login([FromBody] Usuario usuario)
     {
-        Usuario? usuarioExistente = _context.Usuarios
-        .FirstOrDefault(u => u.Email == usuario.Email && u.Senha == usuario.Senha);
+        Usuario? usuarioExistente = _repository
+            .BuscarUsuarioPorEmailSenha(usuario.Email, usuario.Senha);
 
         if (usuarioExistente == null)
         {
             return Unauthorized(new { mensagem = "Usuário ou senha inválidos!" });
         }
 
-        return Ok("Logado com sucesso!");
+        // string token = GerarToken(usuarioExistente);
+        return Ok("Usuário Logado!");
     }
 }

@@ -9,38 +9,35 @@ namespace Prova30.Controllers;
 [Route("api/eventos")]
 public class EventoController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly IEventoRepository _repository;
 
-    public EventoController(AppDbContext context)
+    public EventoController(IEventoRepository repository)
     {
-        _context = context;
+        _repository = repository;
     }
 
     [HttpGet("listar")]
     public IActionResult Listar()
     {
-        var eventos = _context.Eventos.ToList();
+        var eventos = _repository.ListarTodos();
         return Ok(eventos);
     }
 
-    [HttpGet("usuario/{UsuarioId}")]
-    public IActionResult Usuario([FromServices] Evento evento, int UsuarioId)
+    [HttpGet("eventoUsuario/{UsuarioId}")]
+    public IActionResult Usuario(int UsuarioId)
     {
-        var usuario = _context.Usuarios.Find(UsuarioId);
-        if (usuario == null)
-        {
-            return NotFound("Usuário não encontrado.");
-        }
+        var evento = _repository.EventoUsuario(UsuarioId);
+        if (evento == null)
+            return NotFound(new { mensagem = "Nenhum evento encontrado" });
 
-        var eventos = _context.Eventos.Where(e => e.UsuarioId == UsuarioId).ToList();
-        return Ok(eventos);
+        return Ok(evento);
     }
 
     [HttpPost("cadastrar")]
     public IActionResult Cadastrar([FromBody] Evento evento)
     {
-        _context.Eventos.Add(evento);
-        _context.SaveChanges();
+        _repository.Cadastrar(evento);
+        _repository.Salvar();
         return Created("", evento);
     }
 }

@@ -1,5 +1,3 @@
-// TESTEdsa sajd askd as
-
 using Microsoft.EntityFrameworkCore;
 using Prova30.Data;
 
@@ -15,6 +13,9 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IEventoRepository, EventoRepository>();
 
 var app = builder.Build();
 
