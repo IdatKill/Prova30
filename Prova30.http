@@ -1,0 +1,39 @@
+@Prova30 = http://localhost:5288
+
+### Cadastrar Usuario
+POST {{Prova30}}/api/usuario/cadastrar
+Content-Type: application/json
+
+{
+  "email": "getuliobrocha",
+  "senha": "broxinha"
+}
+
+### Listar Usuario
+GET {{Prova30}}/api/usuario/listar
+
+### Login Usuario
+POST {{Prova30}}/api/usuario/login
+Content-Type: application/json
+
+{
+  "email": "getuliobrocha",
+  "senha": "broxinha"
+}
+
+### Cadastrar Evento
+POST {{Prova30}}/api/eventos/cadastrar
+Content-Type: application/json
+    
+{
+    "nome": "Festinha da Tia do Gege",
+    "data": "2025-06-03T12:00:00",
+    "local": "Casa da Tia",
+    "usuarioId": 1
+}
+
+### Listar Evento
+GET {{Prova30}}/api/eventos/listar
+
+### Eventos por Usuario
+GET {{Prova30}}/api/eventos/usuario/1
