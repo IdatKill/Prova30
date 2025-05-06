@@ -1,4 +1,5 @@
 using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Prova30.Data;
 using Prova30.Models;
@@ -17,6 +18,7 @@ public class EventoController : ControllerBase
     }
 
     [HttpGet("listar")]
+    [Authorize(Roles = "admin")]
     public IActionResult Listar()
     {
         var eventos = _repository.ListarTodos();
@@ -33,7 +35,9 @@ public class EventoController : ControllerBase
         return Ok(evento);
     }
 
+    
     [HttpPost("cadastrar")]
+    [Authorize(Roles = "admin")]
     public IActionResult Cadastrar([FromBody] Evento evento)
     {
         _repository.Cadastrar(evento);

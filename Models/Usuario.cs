@@ -8,4 +8,5 @@ public class Usuario
     public string Email { get; set; } = string.Empty;
     public string Senha { get; set; } = string.Empty;
     public DateTime CriadoEm { get; set; } = DateTime.Now;
+    public Roles Role { get; set; } = Roles.admin;
 }
