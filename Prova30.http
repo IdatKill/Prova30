@@ -5,40 +5,40 @@ POST {{Prova30}}/api/usuario/cadastrar
 Content-Type: application/json
 
 {
-  "email": "lucasss",
-  "senha": "12345",
+  "email": "Pedro Brocha",
+  "senha": "12",
   "role": 1
 }
 
 ### Listar Usuario
 GET {{Prova30}}/api/usuario/listar
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVjYXNzcyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ2NDk0MzYwfQ.krJbGdE77K0OBz_Sj7UJ6vPF-C-6BVM9BZsEpYTKrqs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGVkcm8gQnJvY2hhIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJleHAiOjE3NDY0OTUzNTd9.TdeQvTnNgeJac7MMfhvWBV676GZ-ADqhu66Ku66FmVQ
 
 ### Login Usuario
 POST {{Prova30}}/api/usuario/login
 Content-Type: application/json
 
 {
-  "email": "lucasss",
-  "senha": "12345"
+  "email": "Pedro Brocha",
+  "senha": "12"
 }
 
 ### Cadastrar Evento
 POST {{Prova30}}/api/eventos/cadastrar
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVjYXNzcyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ2NDk0NjQ1fQ.URR_ST2JimLhqyUFFJgTWH2C-iZsj7xkmv4tLQplf4c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGVkcm8gQnJvY2hhIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJleHAiOjE3NDY0OTUzNTd9.TdeQvTnNgeJac7MMfhvWBV676GZ-ADqhu66Ku66FmVQ
 Content-Type: application/json
     
 {
-    "nome": "Festinha muito legal",
+    "nome": "Suruba do Gabriel",
     "data": "2025-06-03T12:00:00",
-    "local": "Casinha",
-    "usuarioId": 1
+    "local": "Casa do Pedro",
+    "usuarioId": 6
 }
 
 ### Listar Evento
 GET {{Prova30}}/api/eventos/listar
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVjYXNzcyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ2NDk0ODExfQ.hRF1YRB0D6yu5zIeKJKfyQA_EHp43YT2QmhJTgmpEPY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGVkcm8gQnJvY2hhIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJleHAiOjE3NDY0OTUzNTd9.TdeQvTnNgeJac7MMfhvWBV676GZ-ADqhu66Ku66FmVQ
 
 ### Eventos por Usuario
-GET {{Prova30}}/api/eventos/eventoUsuario/6
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibHVjYXNzcyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ2NDk0ODExfQ.hRF1YRB0D6yu5zIeKJKfyQA_EHp43YT2QmhJTgmpEPY
+GET {{Prova30}}/api/eventos/eventoUsuario/7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGVkcm8gQnJvY2hhIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJleHAiOjE3NDY0OTUzNTd9.TdeQvTnNgeJac7MMfhvWBV676GZ-ADqhu66Ku66FmVQ
